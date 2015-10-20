@@ -1,0 +1,60 @@
+#!/bin/bash
+echo "     _____  ______  ______  _____  __  __                                                "
+echo "   / ____||  ____||  ____||_   _||  \/  |                                                "
+echo "  | |     | |__   | |__     | |  | \  / |                                                "
+echo "  | |     |  __|  |  __|    | |  | |\/| |                                                "
+echo "  | |____ | |____ | |      _| |_ | |  | |                                                "
+echo "   \_____||______||_|     |_____||_|  |_|                                                "
+echo "   _____  ____   __  __    ___   _    _  _____                                           "
+echo "  |_   _||  _ \ |  \/  |  / _ \ | |  | ||  __ \                                          "
+echo "    | |  | |_) || \  / | | (_) || |__| || |__) |                                         "
+echo "    | |  |  _ < | |\/| |  > _ < |  __  ||  ___/                                          "
+echo "   _| |_ | |_) || |  | | | (_) || |  | || |                                              "
+echo "  |_____||____/ |_|  |_|  \___/ |_|  |_||_|                                              "
+echo "  __      __ _        _                                                _                 "
+echo "  \ \    / /(_)      | |                                              | |                "
+echo "   \ \  / /  _  _ __ | |_  _   _   ___   ___   ___          ___   ___ | |_  _   _  _ __  "
+echo "    \ \/ /  | || '__|| __|| | | | / _ \ / __| / _ \        / __| / _ \| __|| | | || '_ \ "
+echo "     \  /   | || |   | |_ | |_| || (_) |\__ \| (_) |       \__ \|  __/| |_ | |_| || |_) |"
+echo "      \/    |_||_|    \__| \__,_| \___/ |___/ \___/        |___/ \___| \__| \__,_|| .__/ "
+echo "                                                                                  | |    "
+echo "                                                                                  |_|    "
+echo "version 0.1"
+echo "--------------------------------"
+echo
+cd ..
+if [ -d "../IBM_v1p6p0p1" ]; then
+  echo Do not run config twice !!!!!
+  echo Goto the directory IBM_v1p6p0p1/examples and run:
+  echo 1. . /usr/local/cadence/scripts/64bit_cadence.conf
+  echo 2. virtuoso
+  echo Exiting ...
+  exit 0
+fi
+echo "Cadence Virtuoso will be setup with the IBM 8HP V6.1.0.1 PDK"
+echo "After the setup do the following:"
+echo "1. Make sure you are in IBM_v1p6p0p1/examples"
+echo "2. Run virtuoso"
+echo "3. If you login to cadence again run . /usr/local/cadence/scripts/64bit_cadence.conf before you run virtuoso"
+echo "*******************************************************"
+echo "*******************************************************"
+echo "Creating folder tree"
+mkdir IBM_v1p6p0p1
+cd IBM_v1p6p0p1/
+echo "setting up Cadence variables"
+. /usr/local/cadence/scripts/64bit_cadence.conf
+cp -Rf /afs/ee.up.ac.za/cefim/software/kits/IBM_PDK/bicmos8hp/V1.6.0.1HP/cdslib/examples/ .
+cd examples
+echo "Configuring display.drf"
+cp /afs/ee.up.ac.za/cefim/software/kits/IBM_PDK/bicmos8hp/V1.6.0.1HP/cdslib/bicmos8hp/display.drf .
+echo "Setting permissions"
+chmod u+rw *
+chmod u+rw .*
+echo "Fixing BindKeys"
+rm .cdsinit
+cp ../../partial_config/.cdsinit .
+chmod u+rw .*
+echo ""
+echo "done. partialpiper"
+echo "============================================================="
+echo "============================================================="
