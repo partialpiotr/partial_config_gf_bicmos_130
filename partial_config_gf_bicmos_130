@@ -23,7 +23,7 @@ echo "version 0.1"
 echo "--------------------------------"
 echo
 cd ..
-if [ -d "../IBM_v1p6p0p1" ]; then
+if [ -d "IBM_v1p6p0p1" ]; then
   echo Do not run config twice !!!!!
   echo Goto the directory IBM_v1p6p0p1/examples and run:
   echo 1. . /usr/local/cadence/scripts/64bit_cadence.conf
