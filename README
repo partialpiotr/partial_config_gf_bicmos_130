@@ -1,0 +1,41 @@
+------------------------ IBM/GF 130nm BiCMOS PDK setup -----------------------
+
+Dear all!
+
+Please follow the instructions below to the letter.
+
+1. Log into your Cadence box
+2. Ensure that you are in your home folder (should be by default)
+3. Run: 
+
+git clone https://github.com/partialpiotr/partial_config.git
+
+4. Type:
+
+cd partial_config
+
+5. Type:
+
+source ibm_411_partial_config
+
+6. Now you can start Cadence Virtuoso as per usual with: virtuoso &
+
+7. When you create a new library you MUST do it as follows:
+
+(a) IBM_PDK -> Library -> Create
+(b) Choose any name you want
+(c) Make sure "Compile an ASCII technology file" is selected
+(d) Click OK, then close the error message and Click OK again
+(e) Specify the ASCII technology file as: /afs/ee.up.ac.za/cefim/software/kits/IBM_PDK/bicmos8hp/V1.6.0.1HP/cdslib/bicmos8hp/techfile411.tf
+(f) Now you can create new cell-views in this newly created library.
+
+8. When running the DRC check in Layout goto:
+
+(a) IBM_PDK -> Checking -> Assura -> DRC -> OK
+
+9. If you logoff cadence and log back in you can cd into the partial_config dir (step 4) and run step 5. The script will detect that you already have the pdk setup and will provide the steps that must be used to start virtuoso correctly.
+
+Your kind cadence scripter :-D
+
+Regards,
+Piotr
