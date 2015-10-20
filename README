@@ -8,15 +8,15 @@ Please follow the instructions below to the letter.
 2. Ensure that you are in your home folder (should be by default)
 3. Run: 
 
-git clone https://github.com/partialpiotr/partial_config.git
+git clone https://github.com/partialpiotr/partial_config_gf_bicmos_130.git
 
 4. Type:
 
-cd partial_config
+cd partial_config_gf_bicmos_130
 
 5. Type:
 
-source ibm_411_partial_config
+source partial_config_gf_bicmos_130
 
 6. Now you can start Cadence Virtuoso as per usual with: virtuoso &
 
@@ -33,7 +33,7 @@ source ibm_411_partial_config
 
 (a) IBM_PDK -> Checking -> Assura -> DRC -> OK
 
-9. If you logoff cadence and log back in you can cd into the partial_config dir (step 4) and run step 5. The script will detect that you already have the pdk setup and will provide the steps that must be used to start virtuoso correctly.
+9. If you logoff cadence and log back in you can cd into the partial_config_gf_bicmos_130 dir (step 4) and run step 5. The script will detect that you already have the pdk setup and will provide the steps that must be used to start virtuoso correctly.
 
 Your kind cadence scripter :-D
 
